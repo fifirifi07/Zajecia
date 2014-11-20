@@ -25,7 +25,7 @@
         android:id="@+id/zadzwon"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Zadzwoń"
+        android:text="Zadzwoń do mnie"
         android:inputType="phone"
         android:layout_below="@+id/phonenumber"
         android:onClick="callClicked"/>
