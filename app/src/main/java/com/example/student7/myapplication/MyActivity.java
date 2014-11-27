@@ -9,17 +9,21 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 
+import org.androidannotations.annotations.EActivity;
+import org.androidannotations.annotations.ViewById;
 
+@EActivity(R.layout.activity_my)
 public class MyActivity extends ActionBarActivity {
 
-    private EditText username;
+    @ViewById(R.id.username)
+    EditText username;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_my);
-        username = (EditText)findViewById(R.id.username);
-    }
+//    @Override
+//    protected void onCreate(Bundle savedInstanceState) {
+//        super.onCreate(savedInstanceState);
+//        setContentView(R.layout.activity_my);
+//        username = (EditText)findViewById(R.id.username);
+//    }
 
     public void loginClicked(View view){
         Intent intent = new Intent(this, SecondActivity.class);

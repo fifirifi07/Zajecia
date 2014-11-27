@@ -1,4 +1,7 @@
 apply plugin: 'com.android.application'
+apply plugin: 'android-apt'
+def AAVersion = '3.2'
+
 
 android {
     compileSdkVersion 20
@@ -20,6 +23,13 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    apt "org.androidannotations:androidannotations:$AAVersion"
+    compile "org.androidannotations:androidannotations-api:$AAVersion"
     compile 'com.android.support:appcompat-v7:20.0.0'
+}
+
+apt {
+    arguments {
+        androidManifestFile variant.processResources.manifestFile
+    }
 }
